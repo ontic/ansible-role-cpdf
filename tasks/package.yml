@@ -1,0 +1,26 @@
+# This source file is subject to the (Open Source Initiative) BSD license
+# that is bundled with this package in the LICENSE file. It is also available
+# through the world-wide-web at this URL: http://www.ontic.com.au/license.html
+# If you did not receive a copy of the license and are unable to obtain it through
+# the world-wide-web, please send an email to license@ontic.com.au immediately.
+# Copyright (c) 2010-2016 Ontic. (http://www.ontic.com.au). All rights reserved.
+
+---
+
+- name: 'CPDF | Checkout GIT repository.'
+  become: yes
+  become_user: 'root'
+  git:
+    repo: 'https://github.com/coherentgraphics/cpdf-binaries.git'
+    dest: '/usr/local/cpdf'
+    update: '{{ cpdf_update }}'
+
+- name: 'CPDF | Symlink executable binary.'
+  become: yes
+  file:
+    path: '/usr/local/bin/cpdf'
+    src: '/usr/local/cpdf/Linux-Intel-{{ "64" if ansible_architecture == "x86_64" else "32" }}bit/cpdf'
+    user: 'root'
+    group: 'root'
+    mode: '0644'
+    state: 'link'
