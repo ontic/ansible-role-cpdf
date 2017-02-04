@@ -20,7 +20,7 @@
   file:
     path: '/usr/local/bin/cpdf'
     src: '/usr/local/cpdf/Linux-Intel-{{ "64" if ansible_architecture == "x86_64" else "32" }}bit/cpdf'
-    user: 'root'
+    owner: 'root'
     group: 'root'
     mode: '0644'
     state: 'link'
