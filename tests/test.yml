@@ -7,4 +7,4 @@
   vars:
     cpdf_update: yes
   roles:
-    - { role: 'ontic.cpdf' }
+    - { role: 'role_under_test' }
