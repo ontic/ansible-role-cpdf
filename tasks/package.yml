@@ -3,7 +3,23 @@
 
 ---
 
-- name: 'CPDF | Checkout GIT repository.'
+- name: 'CPDF | Debian | Install Git.'
+  become: yes
+  apt:
+    name: 'git'
+    state: 'present'
+  when: 'ansible_os_family == "Debian"'
+  with_items:
+    - 'git'
+
+- name: 'CPDF | RedHat | Install Git.'
+  become: yes
+  yum:
+    name: 'git'
+    state: 'present'
+  when: 'ansible_os_family == "RedHat"'
+
+- name: 'CPDF | Checkout Git repository.'
   become: yes
   become_user: 'root'
   git:
