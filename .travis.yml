@@ -18,9 +18,10 @@ before_install:
   - 'export cleanup=false'
   - 'wget -O ${PWD}/tests/test.sh https://raw.githubusercontent.com/ontic/ansible-role-test/master/test.sh'
   - 'chmod +x ${PWD}/tests/test.sh'
+  - '${PWD}/tests/test.sh build'
 
 script:
-  - '${PWD}/tests/test.sh'
+  - '${PWD}/tests/test.sh test'
   - 'docker exec --tty ${container_id} env TERM=xterm cpdf -version || true'
 
 notifications:
