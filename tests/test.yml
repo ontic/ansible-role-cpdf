@@ -8,9 +8,11 @@
     cpdf_update: yes
   pre_tasks:
     - name: 'Update apt cache.'
+      become: yes
       apt:
         update_cache: yes
-        cache_valid_time: 600
+        cache_valid_time: '600'
       when: 'ansible_os_family == "Debian"'
+      changed_when: false
   roles:
     - { role: 'role_under_test' }
