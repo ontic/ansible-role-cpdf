@@ -8,8 +8,6 @@ services: 'docker'
 env:
   - distribution: 'centos'
     version: '7'
-  - distribution: 'fedora'
-    version: '26'
   - distribution: 'debian'
     version: '9'
   - distribution: 'ubuntu'
