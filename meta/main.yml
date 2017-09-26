@@ -21,6 +21,9 @@ galaxy_info:
     - name: 'EL'
       versions:
         - '7'
+    - name: 'Fedora'
+      versions:
+        - '26'
   galaxy_tags:
     - 'ontic'
     - 'cpdf'
