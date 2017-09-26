@@ -6,7 +6,7 @@
 - name: 'CPDF | Debian | Install Git.'
   become: yes
   apt:
-    name: 'git-core'
+    name: 'git'
     state: 'present'
   when: 'ansible_os_family == "Debian"'
   with_items:
