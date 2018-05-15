@@ -34,5 +34,5 @@
     src: '/usr/local/cpdf/Linux-Intel-{{ "64" if ansible_architecture == "x86_64" else "32" }}bit/cpdf'
     owner: 'root'
     group: 'root'
-    mode: '0644'
+    mode: '0755'
     state: 'link'
